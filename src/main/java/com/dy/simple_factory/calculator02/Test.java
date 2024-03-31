@@ -1,0 +1,38 @@
+package com.dy.simple_factory.calculator02;
+
+import java.util.Scanner;
+
+/**
+ * Operator 类复用
+ */
+
+public class Test {
+
+	public static void main(String[] args){
+
+		System.out.println("**********************************************");		
+		System.out.println();
+
+		try {
+			Scanner sc = new Scanner(System.in);
+
+			System.out.println("请输入数字A：");	
+			double numberA = Double.parseDouble(sc.nextLine());
+			System.out.println("请选择运算符号(+、-、*、/)：");	
+			String strOperate = sc.nextLine();
+			System.out.println("请输入数字B：");	
+			double numberB = Double.parseDouble(sc.nextLine());
+			
+			double result = Operation.getResult(numberA,numberB,strOperate);
+
+			System.out.println("结果是："+result);	
+		}
+		catch(Exception e){
+			System.out.println("您的输入有错："+e.toString());	
+		}
+
+		System.out.println();
+		System.out.println("**********************************************");
+
+	}
+}
